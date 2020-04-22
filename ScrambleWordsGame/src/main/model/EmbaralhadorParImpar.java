@@ -5,9 +5,10 @@ public class EmbaralhadorParImpar implements Embaralhador {
     @Override
     public String getScrambleWord(String word) {
 
-        String scrambledWord = new String();
+        if (word==null || word.isEmpty())
+            return "";
 
-        //TODO considerar quando o tamanho da palavra é ímpar!
+        String scrambledWord = new String();
 
         int wordLength = word.length();
 

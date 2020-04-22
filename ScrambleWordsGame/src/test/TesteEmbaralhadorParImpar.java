@@ -12,10 +12,14 @@ public class TesteEmbaralhadorParImpar {
 
     @Test
     public void testeResultadoDoEmbaralhamentoParImpar() {
+        assertEquals("", scrambler.getScrambleWord(null));
+        assertEquals("", scrambler.getScrambleWord(""));
+        assertEquals("a", scrambler.getScrambleWord("a"));
         assertEquals("rBsali", scrambler.getScrambleWord("Brasil"));
         assertEquals("rBsalia", scrambler.getScrambleWord("Brasila"));
         assertEquals("aRafle", scrambler.getScrambleWord("Rafael"));
         assertEquals("aRafLe", scrambler.getScrambleWord("RafaeL"));
+        assertEquals("ugraadc-uhav", scrambler.getScrambleWord("guarda-chuva"));
     }
 
     @Test
