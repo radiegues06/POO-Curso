@@ -1,6 +1,6 @@
 package test;
 
-import main.model.BancoDePalavras;
+import main.model.banco.BancoDePalavras;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

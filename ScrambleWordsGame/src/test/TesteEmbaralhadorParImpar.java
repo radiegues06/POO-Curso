@@ -1,7 +1,6 @@
 package test;
 
-import main.model.EmbaralhadorParImpar;
-import org.junit.Before;
+import main.model.embaralhador.EmbaralhadorParImpar;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

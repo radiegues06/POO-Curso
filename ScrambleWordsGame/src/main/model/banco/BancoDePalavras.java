@@ -1,4 +1,4 @@
-package main.model;
+package main.model.banco;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

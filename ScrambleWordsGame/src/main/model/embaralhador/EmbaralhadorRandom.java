@@ -1,5 +1,7 @@
-package main.model;
+package main.model.embaralhador;
 
+
+import main.model.embaralhador.Embaralhador;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,6 @@
-package main.model;
+package main.model.embaralhador;
+
+import main.model.embaralhador.Embaralhador;
 
 public class EmbaralhadorParImpar implements Embaralhador {
 
