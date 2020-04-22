@@ -1,4 +1,4 @@
-package main;
+package main.model;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

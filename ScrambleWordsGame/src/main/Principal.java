@@ -1,5 +1,7 @@
 package main;
 
+import main.model.BancoDePalavras;
+
 public class Principal {
 
     public static void main(String[] args) {
