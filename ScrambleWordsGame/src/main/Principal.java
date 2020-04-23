@@ -1,17 +1,15 @@
 package main;
 
-import main.model.BancoDePalavras;
+import main.model.mecanica.FabricaDeMecanicaDoJogo;
+import main.model.mecanica.MecanicaDoJogo;
 
 public class Principal {
 
     public static void main(String[] args) {
 
-        BancoDePalavras banco = new BancoDePalavras();
+        MecanicaDoJogo jogo = FabricaDeMecanicaDoJogo.getMecanica();
 
-
-        for (int i=0;i<100;i++) {
-            System.out.println(banco.getWord());
-        }
+        System.out.println(jogo.getGameStart());
 
     }
 }
