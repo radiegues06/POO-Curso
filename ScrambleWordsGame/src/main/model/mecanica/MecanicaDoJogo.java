@@ -7,13 +7,17 @@ import main.model.embaralhador.FabricaDeEmbaralhadores;
 
 public interface MecanicaDoJogo {
 
-    String lineSeparator = "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-\n";
-    String welcomeString = "Bem-vindo ao Jogo das Palavras Embaralhadas!\n" +
+    String lineSeparator = "\n#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-\n";
+    String welcomeText = "\n" +
+            "Bem-vindo ao Jogo das Palavras Embaralhadas!\n" +
             "Projeto Final do curso de Programação Orientada a Objetos em Java\n" +
-            "Desenvolvido por Rafael Amancio Diegues\n" + lineSeparator;
+            "Desenvolvido por Rafael Amancio Diegues\n\n" +
+            "Objetivo: escrever a palavra original a partir da palavra com as letras embaralhadas,.\n\n";
 
     boolean continueGame = true;
+
     Embaralhador embaralhador = new FabricaDeEmbaralhadores().getEmbaralhador();
+
     Usuario usuario = new Usuario();
     BancoDePalavras bancoDePalavras = new BancoDePalavras();
 
@@ -21,7 +25,7 @@ public interface MecanicaDoJogo {
 
     public int calculateScore();
 
-    public String nextGameLine();
+    public String getNextWord();
 
     public boolean validateWord(String word);
 

@@ -12,7 +12,7 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
     }
 
     @Override
-    public String nextGameLine() {
+    public String getNextWord() {
         return null;
     }
 
@@ -28,6 +28,6 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
 
     @Override
     public String getGameStart() {
-        return welcomeString;
+        return welcomeText;
     }
 }
