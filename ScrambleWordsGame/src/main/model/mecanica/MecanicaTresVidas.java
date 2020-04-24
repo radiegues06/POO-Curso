@@ -30,4 +30,9 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
     public String getGameStart() {
         return welcomeText;
     }
+
+    @Override
+    public boolean getGameContinuation(String word) {
+        return false;
+    }
 }

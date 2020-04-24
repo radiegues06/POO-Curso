@@ -14,8 +14,6 @@ public interface MecanicaDoJogo {
             "Desenvolvido por Rafael Amancio Diegues\n\n" +
             "Objetivo: escrever a palavra original a partir da palavra com as letras embaralhadas,.\n\n";
 
-    boolean continueGame = true;
-
     Embaralhador embaralhador = new FabricaDeEmbaralhadores().getEmbaralhador();
 
     Usuario usuario = new Usuario();
@@ -32,5 +30,7 @@ public interface MecanicaDoJogo {
     public int getScore();
 
     public String getGameStart();
+
+    public boolean getGameContinuation(String word);
 
 }

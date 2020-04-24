@@ -16,10 +16,10 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
     @Override
     public String getNextWord() {
-        word = bancoDePalavras.getWord();
-        System.out.println("A palavra é: " + word);
+        this.word = bancoDePalavras.getWord();
+        System.out.println("A palavra é: " + this.word);
 
-        return embaralhador.getScrambleWord(word);
+        return embaralhador.getScrambleWord(this.word);
     }
 
     @Override
@@ -49,5 +49,13 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
         return welcomeText + mecanidaDoJogo;
 
+    }
+
+    @Override
+    public boolean getGameContinuation(String word) {
+        if (this.word.isEmpty() || validateWord(word))
+            return true;
+        else
+            return false;
     }
 }
