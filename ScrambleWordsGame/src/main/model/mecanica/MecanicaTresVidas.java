@@ -1,6 +1,7 @@
 package main.model.mecanica;
 
 public class MecanicaTresVidas  implements MecanicaDoJogo {
+
     @Override
     public int calculateBonus() {
         return 0;
@@ -17,9 +18,10 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
     }
 
     @Override
-    public boolean validateWord(String word) {
-        return false;
+    public String validateWord(String word) {
+        return null;
     }
+
 
     @Override
     public int getScore() {
@@ -27,12 +29,17 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
     }
 
     @Override
-    public String getGameStart() {
-        return welcomeText;
+    public String getStatus() {
+        return null;
     }
 
     @Override
-    public boolean getGameContinuation(String word) {
+    public String getGameStart() {
+        return null;
+    }
+
+    @Override
+    public boolean getContinueGame() {
         return false;
     }
 }

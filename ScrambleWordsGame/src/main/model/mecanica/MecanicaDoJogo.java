@@ -6,7 +6,7 @@ import main.model.embaralhador.Embaralhador;
 import main.model.embaralhador.FabricaDeEmbaralhadores;
 
 public interface MecanicaDoJogo {
-
+    
     String lineSeparator = "\n#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-\n";
     String welcomeText = "\n" +
             "Bem-vindo ao Jogo das Palavras Embaralhadas!\n" +
@@ -25,12 +25,14 @@ public interface MecanicaDoJogo {
 
     public String getNextWord();
 
-    public boolean validateWord(String word);
+    public String validateWord(String word);
 
     public int getScore();
 
+    public String getStatus();
+
     public String getGameStart();
 
-    public boolean getGameContinuation(String word);
+    public boolean getContinueGame();
 
 }

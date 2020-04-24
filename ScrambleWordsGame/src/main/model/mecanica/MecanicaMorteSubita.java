@@ -2,7 +2,8 @@ package main.model.mecanica;
 
 public class MecanicaMorteSubita implements MecanicaDoJogo {
 
-    String word = new String();
+    private String word = new String();
+    private boolean continueGame = true;
 
     @Override
     public int calculateBonus() {
@@ -17,25 +18,34 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     @Override
     public String getNextWord() {
         this.word = bancoDePalavras.getWord();
-        System.out.println("A palavra é: " + this.word);
 
         return embaralhador.getScrambleWord(this.word);
     }
 
     @Override
-    public boolean validateWord(String word) {
-        if (this.word.equals(word)) {
+    public String validateWord(String userWord) {
+        if (this.word.equals(userWord)) {
             usuario.increaseRightWords();
-            return true;
+            this.continueGame =  true;
+            return "Correto!";
         } else {
             usuario.increaseWrongWords();
-            return false;
+            this.continueGame =  false;
+            return "Incorreto! A palavra correta é " + this.word + ".";
         }
     }
 
     @Override
     public int getScore() {
         return usuario.getScore();
+    }
+
+    @Override
+    public String getStatus() {
+        String status = new String();
+        status += "A pontuação atual é de " + usuario.getScore() + " pontos\n" +
+                "O número de palavras certas é " + usuario.getRightWords() + "\n";
+        return status;
     }
 
     @Override
@@ -52,10 +62,7 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     }
 
     @Override
-    public boolean getGameContinuation(String word) {
-        if (this.word.isEmpty() || validateWord(word))
-            return true;
-        else
-            return false;
+    public boolean getContinueGame() {
+        return continueGame;
     }
 }
