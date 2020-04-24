@@ -9,9 +9,5 @@ public class Principal {
 
         MecanicaDoJogo jogo = FabricaDeMecanicaDoJogo.getMecanica();
 
-        System.out.println(jogo.getGameStart());
-
-        System.out.println(jogo.getNextWord());
-
     }
 }

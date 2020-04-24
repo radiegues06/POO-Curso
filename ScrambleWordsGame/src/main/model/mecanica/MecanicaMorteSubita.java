@@ -24,12 +24,18 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
     @Override
     public boolean validateWord(String word) {
-        return false;
+        if (this.word.equals(word)) {
+            usuario.increaseRightWords();
+            return true;
+        } else {
+            usuario.increaseWrongWords();
+            return false;
+        }
     }
 
     @Override
     public int getScore() {
-        return 0;
+        return usuario.getScore();
     }
 
     @Override
