@@ -14,8 +14,6 @@ public interface MecanicaDoJogo {
             "Desenvolvido por Rafael Amancio Diegues\n\n" +
             "Objetivo: escrever a palavra original a partir da palavra com as letras embaralhadas,.\n\n";
 
-    Embaralhador embaralhador = new FabricaDeEmbaralhadores().getEmbaralhador();
-
     Usuario usuario = new Usuario();
     BancoDePalavras bancoDePalavras = new BancoDePalavras();
 

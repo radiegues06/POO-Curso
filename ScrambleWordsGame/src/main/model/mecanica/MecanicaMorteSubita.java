@@ -1,5 +1,8 @@
 package main.model.mecanica;
 
+import main.model.embaralhador.Embaralhador;
+import main.model.embaralhador.FabricaDeEmbaralhadores;
+
 public class MecanicaMorteSubita implements MecanicaDoJogo {
 
     private String word = new String();
@@ -17,6 +20,9 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
     @Override
     public String getNextWord() {
+
+        Embaralhador embaralhador = new FabricaDeEmbaralhadores().getEmbaralhador();
+
         this.word = bancoDePalavras.getWord();
 
         return embaralhador.getScrambleWord(this.word);
