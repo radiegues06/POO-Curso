@@ -6,6 +6,8 @@ import main.model.embaralhador.Embaralhador;
 import main.model.embaralhador.FabricaDeEmbaralhadores;
 
 public interface MecanicaDoJogo {
+
+    public final int POINTS_PER_RIGHT_WORD = 10;
     
     String lineSeparator = "\n#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-\n";
     String welcomeText = "\n" +
@@ -19,7 +21,7 @@ public interface MecanicaDoJogo {
 
     public int calculateBonus();
 
-    public int calculateScore();
+    public void updateScore();
 
     public String getNextWord();
 

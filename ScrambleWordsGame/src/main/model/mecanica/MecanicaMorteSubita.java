@@ -7,15 +7,19 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
     private String word = new String();
     private boolean continueGame = true;
+    private long startTime = 0;
+    private final int MILISECONDS_TIME_BONUS_LIMIT = 60 * 1000;
 
     @Override
     public int calculateBonus() {
-        return 0;
+        int elapsedTime = (int) (System.currentTimeMillis() - startTime);
+        return elapsedTime < MILISECONDS_TIME_BONUS_LIMIT ?
+                POINTS_PER_RIGHT_WORD * (MILISECONDS_TIME_BONUS_LIMIT - elapsedTime) / MILISECONDS_TIME_BONUS_LIMIT : 0;
     }
 
     @Override
-    public int calculateScore() {
-        return 0;
+    public void updateScore() {
+        usuario.addPointsToScore(POINTS_PER_RIGHT_WORD + calculateBonus());
     }
 
     @Override
@@ -25,6 +29,8 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
 
         this.word = bancoDePalavras.getWord();
 
+        this.startTime = System.currentTimeMillis();
+
         return embaralhador.getScrambleWord(this.word);
     }
 
@@ -32,6 +38,7 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     public String validateWord(String userWord) {
         if (this.word.equals(userWord)) {
             usuario.increaseRightWords();
+            updateScore();
             this.continueGame =  true;
             return "Correto!";
         } else {
@@ -50,7 +57,7 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     public String getStatus() {
         String status = new String();
         status += "A pontuação atual é de " + usuario.getScore() + " pontos\n" +
-                "O número de palavras certas é " + usuario.getRightWords() + "\n";
+                "O número de palavras certas é " + usuario.getRightWords();
         return status;
     }
 
@@ -61,7 +68,6 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
                 "   - Se errar alguma palavra o jogo termina;\n" +
                 "   - A pontuação é calculada de acordo com o número de palavras acertadas\n" +
                 lineSeparator;
-                //TODO considerar talvez um bonus de acordo com o tamanho da palavra?
 
         return welcomeText + mecanidaDoJogo;
 

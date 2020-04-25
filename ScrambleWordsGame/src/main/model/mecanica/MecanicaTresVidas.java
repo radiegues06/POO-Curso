@@ -4,12 +4,13 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
 
     @Override
     public int calculateBonus() {
+        //TODO considerar talvez um bonus de acordo com o tamanho da palavra?
         return 0;
     }
 
     @Override
-    public int calculateScore() {
-        return 0;
+    public void updateScore() {
+
     }
 
     @Override

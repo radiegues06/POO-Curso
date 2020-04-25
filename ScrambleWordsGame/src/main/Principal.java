@@ -18,7 +18,6 @@ public class Principal {
 
             printNewWord();
             printStatus();
-            //Todo print update comments, with score, if word is right or wrong, what the right word was
 
         }
 
