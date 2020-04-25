@@ -71,4 +71,11 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     public boolean getContinueGame() {
         return continueGame;
     }
+
+    @Override
+    public String getMensagemDeEncerramento() {
+        return "O jogo terminou!\n" +
+        "Você acertou " + usuario.getRightWords() + " palavras e fez um total de " +
+                String.format("%.2f",usuario.getScore()) + " pontos.";
+    }
 }

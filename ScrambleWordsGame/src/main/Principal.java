@@ -21,6 +21,8 @@ public class Principal {
 
         }
 
+        printMensagemDeEncerramento();
+
     }
 
     private static void printNewWord() {
@@ -41,5 +43,9 @@ public class Principal {
 
     private static void printInicio() {
         System.out.println(jogo.getGameStart());
+    }
+
+    private static void printMensagemDeEncerramento(){
+        System.out.println(jogo.getMensagemDeEncerramento());
     }
 }

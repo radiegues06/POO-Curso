@@ -50,7 +50,7 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
         return "A pontuação atual é de " + String.format("%.2f",usuario.getScore()) + " pontos\n" +
                 "O número de palavras certas é " + usuario.getRightWords() + "\n" +
                 "Ainda há " + vidasRestantes + " vida" +
-                (vidasRestantes == 1? "s":"")  + ".";
+                (vidasRestantes != 1? "s":"")  + ".";
     }
 
     @Override
@@ -67,5 +67,12 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
     @Override
     public boolean getContinueGame() {
         return continueGame;
+    }
+
+    @Override
+    public String getMensagemDeEncerramento() {
+        return "O jogo terminou!\n" +
+                "Você acertou " + usuario.getRightWords() + " palavras e fez um total de " +
+                String.format("%.2f",usuario.getScore()) + " pontos.";
     }
 }

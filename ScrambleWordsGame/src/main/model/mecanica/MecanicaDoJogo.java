@@ -33,4 +33,6 @@ public interface MecanicaDoJogo {
 
     public boolean getContinueGame();
 
+    public String getMensagemDeEncerramento();
+
 }
