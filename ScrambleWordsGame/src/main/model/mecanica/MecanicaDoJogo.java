@@ -19,15 +19,13 @@ public interface MecanicaDoJogo {
     Usuario usuario = new Usuario();
     BancoDePalavras bancoDePalavras = new BancoDePalavras();
 
-    public int calculateBonus();
+    public double calculateBonus();
 
     public void updateScore();
 
     public String getNextWord();
 
-    public String validateWord(String word);
-
-    public int getScore();
+    public String validateWord(String userWord);
 
     public String getStatus();
 

@@ -11,7 +11,7 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     private final int MILISECONDS_TIME_BONUS_LIMIT = 60 * 1000;
 
     @Override
-    public int calculateBonus() {
+    public double calculateBonus() {
         int elapsedTime = (int) (System.currentTimeMillis() - startTime);
         return elapsedTime < MILISECONDS_TIME_BONUS_LIMIT ?
                 POINTS_PER_RIGHT_WORD * (MILISECONDS_TIME_BONUS_LIMIT - elapsedTime) / MILISECONDS_TIME_BONUS_LIMIT : 0;
@@ -49,16 +49,9 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
     }
 
     @Override
-    public int getScore() {
-        return usuario.getScore();
-    }
-
-    @Override
     public String getStatus() {
-        String status = new String();
-        status += "A pontuação atual é de " + usuario.getScore() + " pontos\n" +
+        return "A pontuação atual é de " + usuario.getScore() + " pontos\n" +
                 "O número de palavras certas é " + usuario.getRightWords();
-        return status;
     }
 
     @Override
@@ -67,6 +60,7 @@ public class MecanicaMorteSubita implements MecanicaDoJogo {
         String mecanidaDoJogo = "Você está jogando no modo Morte Súbita:\n" +
                 "   - Se errar alguma palavra o jogo termina;\n" +
                 "   - A pontuação é calculada de acordo com o número de palavras acertadas\n" +
+                "   - O bônus é calculado de acordo com o tempo para responder. Quanto mais rápido, maior!\n" +
                 lineSeparator;
 
         return welcomeText + mecanidaDoJogo;

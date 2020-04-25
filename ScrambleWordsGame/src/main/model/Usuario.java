@@ -2,7 +2,7 @@ package main.model;
 
 public class Usuario {
 
-    private int score = 0;
+    private double score = 0;
     private int wrongWords = 0;
     private int rightWords = 0;
     private int totalWords = 0;
@@ -22,11 +22,11 @@ public class Usuario {
         this.totalWords += 1;
     }
 
-    public void addPointsToScore(int points) {
+    public void addPointsToScore(double points) {
         this.score += points;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 

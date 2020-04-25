@@ -57,4 +57,16 @@ public class BancoDePalavras {
         Random random = new Random();
         return random.nextInt(words.size());
     }
+
+    public int getMaximumWordLength() {
+        int maxLength = 0;
+        String longestString = null;
+        for (String s : words) {
+            if (s.length() > maxLength) {
+                maxLength = s.length();
+                longestString = s;
+            }
+        }
+        return maxLength;
+    }
 }
