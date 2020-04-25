@@ -11,7 +11,7 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
 
     @Override
     public double calculateBonus() {
-        return this.word.length() / bancoDePalavras.getMaximumWordLength() * POINTS_PER_RIGHT_WORD;
+        return (double) this.word.length() / (double) bancoDePalavras.getMaximumWordLength() * POINTS_PER_RIGHT_WORD;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
         } else {
             usuario.increaseWrongWords();
 
-            if (usuario.getWrongWords() > vidasInicial)
+            if (usuario.getWrongWords() >= vidasInicial)
                 this.continueGame =  false;
             return "Incorreto! A palavra correta é " + this.word + ".";
         }
@@ -46,9 +46,11 @@ public class MecanicaTresVidas  implements MecanicaDoJogo {
 
     @Override
     public String getStatus() {
-        return "A pontuação atual é de " + usuario.getScore() + " pontos\n" +
+        int vidasRestantes = vidasInicial - usuario.getWrongWords();
+        return "A pontuação atual é de " + String.format("%.2f",usuario.getScore()) + " pontos\n" +
                 "O número de palavras certas é " + usuario.getRightWords() + "\n" +
-                "Ainda há " + (vidasInicial - usuario.getWrongWords()) + " vidas.";
+                "Ainda há " + vidasRestantes + " vida" +
+                (vidasRestantes == 1? "s":"")  + ".";
     }
 
     @Override
