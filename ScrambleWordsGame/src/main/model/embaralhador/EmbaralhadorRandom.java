@@ -17,7 +17,7 @@ public class EmbaralhadorRandom implements Embaralhador {
     @Override
     public String getScrambleWord(String word) {
 
-        if (word==null || word.isEmpty())
+        if (word==null || word.isEmpty() || word.matches("([a-zA-Z])\\1*"))
             return "";
 
         this.originalWord = word;
@@ -32,6 +32,9 @@ public class EmbaralhadorRandom implements Embaralhador {
         for (Integer i:  generateShuffleIndexes(originalWord.length())) {
             shuffledString += originalWord.charAt(i);
         }
+
+        if (shuffledString.equals(originalWord))
+            shuffledString = scrambleWord();
 
         return shuffledString;
     }
