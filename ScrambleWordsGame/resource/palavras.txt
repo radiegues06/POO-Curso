@@ -250,9 +250,7 @@ mesmo
 noite
 evento
 sempre
-todo mundo
 exato
-todo mundo
 exame
 exemplo
 exceto excitado
@@ -785,10 +783,7 @@ meia
 macio
 alguém
 alguém
-alguma coisa
-às vezes
 filho
-em breve
 desculpe
 som
 sopa
@@ -829,7 +824,6 @@ estudo
 estúpido
 sujeito
 substância
-bem sucedido
 como
 repentino
 açúcar
@@ -861,8 +855,6 @@ tênis
 terrível
 teste
 que
-que
-o deles
 deles
 então
 lá
@@ -909,7 +901,6 @@ sob
 entender
 unidade
 até
-para cima
 use
 útil
 habitual
@@ -940,7 +931,6 @@ bem vindo
 bem
 oeste
 molhado
-o que
 roda
 quando
 onde
@@ -948,7 +938,6 @@ qual
 enquanto
 branco
 quem
-por que
 largo
 esposa
 selvagem

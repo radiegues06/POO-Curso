@@ -10,8 +10,9 @@ public class TestBancoDePalavras {
     @Test
     public void testGetWordFromFile() {
         BancoDePalavras banco = new BancoDePalavras();
-        assertEquals("abar", banco.getWord(100));
-        assertEquals("facanito", banco.getWord(1000));
+        assertEquals("irmão", banco.getWord(100));
+        assertEquals("noite", banco.getWord(249));
+        assertEquals("sorriso", banco.getWord(776));
     }
 
 }
